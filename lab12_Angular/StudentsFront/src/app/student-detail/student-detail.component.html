@@ -1,0 +1,16 @@
+@if (student()) {
+  @let s = student();
+  <div>
+    <h2>{{ s!.firstName | uppercase }} {{ s!.lastName | uppercase }} details</h2>
+    <div><span>Id: </span>{{ s!.id }}</div>
+    <div>
+      <label>Index: <input [(ngModel)]="s!.index" name="index" /></label>
+      <label>First name: <input [(ngModel)]="s!.firstName" name="first name" /></label>
+      <label>Last name: <input [(ngModel)]="s!.lastName" name="last name" /></label>
+    </div>
+    <button (click)="save()">Save</button>
+    <button (click)="goBack()">Back</button>
+  </div>
+} @else {
+  <h2>No student found.</h2>
+}
